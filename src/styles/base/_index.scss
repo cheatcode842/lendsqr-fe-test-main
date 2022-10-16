@@ -1,0 +1,24 @@
+@use '../abstract' as *;
+
+// html root element
+* {
+  font-size: map-get(map-get($font-sizes, 'base'), 'font-size');
+  line-height: map-get(map-get($font-sizes, 'base'), 'line-height');
+  color: $text-secondary;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+.divider {
+  height: 2px;
+  opacity: 0.3;
+  background-color: $border-color;
+}
+
+.loading {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 30px;
+  color: $color-primary;
+  text-align: center;
+}

@@ -1,0 +1,10 @@
+@use '../abstract' as *;
+
+.btn {
+  border: none;
+  color: $text-primary;
+  cursor: pointer;
+  padding: 0.25em 0.5em;
+  width: 100%;
+  @include dflex(center);
+}

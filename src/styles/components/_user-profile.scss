@@ -1,0 +1,154 @@
+@use '../abstract' as *;
+
+.profile {
+  &--user,
+  &--nav > .nav-list {
+    @include dflex;
+  }
+  // box-shadow is cool
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+
+  &--user {
+    .imgContainer {
+      padding: 0.5em;
+      display: grid;
+      margin-inline: 1em;
+      aspect-ratio: 1;
+      height: 6.25rem;
+      img {
+        border-radius: 50%;
+        background-position: center;
+      }
+    }
+
+    > *:not(.divider) {
+      width: 8rem;
+    }
+
+    .dividerContainer {
+      padding: 1em 0;
+      height: 100%;
+      width: fit-content;
+    }
+    .divider {
+      width: 2px;
+      height: 6.25rem;
+      transform: rotateY(9deg);
+      margin-inline: 1em;
+    }
+
+    .identity {
+      flex-grow: 0.2;
+      > h1,
+      h2 {
+        font-weight: 500;
+        font-size: 22px;
+      }
+
+      > h2 {
+        font-size: 18px;
+      }
+    }
+
+    .account-info {
+      flex-grow: 0.2;
+      > h2 {
+        font-weight: 500;
+        font-size: 22px;
+      }
+    }
+
+    .levels > h2 {
+      font-weight: 500;
+      font-size: 22px;
+    }
+
+    p {
+      margin-top: 0.5em;
+    }
+
+    h2 {
+      font-weight: 500;
+    }
+  }
+
+  &--nav {
+    margin-top: 2em;
+    .nav-list {
+      list-style-type: none;
+      justify-content: space-evenly; // it is a flex item. Check line 7 above
+      margin: 0;
+      padding: 0;
+
+      .nav-item {
+        a {
+          text-decoration: none;
+        }
+
+        position: relative;
+        @include transition-all;
+        transition-timing-function: cubic-bezier(0.76, 0.34, 0.1, 0.81);
+        transition-duration: 300ms;
+
+        a::after {
+          content: '';
+          height: 4px;
+          width: 120%;
+          position: absolute;
+          left: -0.5725rem;
+          right: -0.5325rem;
+          bottom: -4px;
+        }
+
+        a:hover::after {
+          background-color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.general-information {
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  margin: 2em 0 0;
+  padding: 1em;
+  padding-bottom: 3em;
+
+  .dividerContainer {
+    padding: 1em;
+    max-width: 100%;
+  }
+
+  h2 {
+    margin: 0.5em 0;
+    font-weight: 700;
+  }
+
+  // detail category
+  .details {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5em;
+
+    .info {
+      padding: 0.5em;
+      min-width: max-content;
+
+      .kind {
+        font-size: 400;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+        color: $text-primary;
+      }
+
+      .description {
+        font-size: 500;
+        text-align: center;
+      }
+    }
+  }
+
+  .header {
+    margin: 2em 4em 0;
+  }
+}

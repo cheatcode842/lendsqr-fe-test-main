@@ -1,0 +1,34 @@
+@use './variables' as *;
+
+@mixin dflex($justify: flex-start) {
+  align-items: center;
+  display: flex;
+  justify-content: $justify;
+}
+
+@mixin dflex-column($align: center) {
+  align-items: $align;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin d-grid($items: center) {
+  display: grid;
+  place-items: $items;
+}
+
+@mixin transition-all {
+  transition: all 300ms ease-in;
+}
+
+@mixin tablet-up {
+  @media only screen and (min-width: $tablet-up) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $desktop) {
+    @content;
+  }
+}

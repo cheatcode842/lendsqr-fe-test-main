@@ -1,0 +1,133 @@
+@use '../abstract' as *;
+
+.login {
+  @include dflex-column;
+  padding: 2em 1em 0;
+  min-height: 100vh;
+  overflow: hidden scroll;
+
+  @include desktop {
+    flex-direction: row;
+    max-height: 100vh;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  &__hero {
+    @include dflex-column(center);
+    @include desktop {
+      width: 50%;
+      padding: 0 3em;
+      background-color: lighten($color-outline, 45%);
+      height: 100vh;
+      justify-content: center;
+    }
+
+    &--logo {
+      margin-inline: auto;
+      margin-bottom: 1rem;
+      @include desktop {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+      }
+    }
+  }
+
+  &__form {
+    flex-grow: 0.8;
+    padding-bottom: 1em;
+    width: 100%;
+
+    @include transition-all;
+
+    @include tablet-up {
+      width: clamp(calc(100vw - 30%), 60%, 100vw);
+      margin-inline: auto;
+    }
+
+    @include desktop {
+      width: 50%;
+      padding: 0 3em;
+      background-color: $white;
+    }
+
+    .title {
+      @include dflex-column;
+      text-align: center;
+      margin-bottom: 1em;
+      @include desktop {
+        margin-bottom: 4em;
+      }
+
+      h1 {
+        color: $text-secondary;
+      }
+
+      h1 + p {
+        color: $text-primary;
+      }
+    }
+
+    .form {
+      @include dflex-column;
+      align-items: stretch;
+      gap: 1rem;
+
+      .input {
+        padding: 0.5em 1em;
+        height: 3.125rem;
+
+        &:focus {
+          background-color: darken($white, 1%);
+        }
+      }
+
+      .passwordContainer {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .btn {
+          display: none;
+          position: absolute;
+          right: 0;
+
+          background-color: $white;
+          color: $color-primary;
+          font-weight: 500;
+          margin: 0.2em;
+          max-width: fit-content;
+
+          @include tablet-up {
+            padding: 0.3em 1em;
+            margin-right: 0.5em;
+            display: flex;
+          }
+        }
+      }
+
+      .btn--forgot-password {
+        background-color: transparent;
+        color: $color-primary;
+        width: fit-content;
+        padding: 0.25em 0.5em;
+        transform: translateY(-0.5rem);
+      }
+
+      .btn--login {
+        background-color: $color-primary;
+        border-radius: 8px;
+        color: lighten($color-primary, 70%);
+        font-weight: 500;
+        height: 3rem;
+
+        @include transition-all;
+        &:hover {
+          background-color: darken($color-primary, 7%);
+          color: lighten($color-primary, 90%);
+        }
+      }
+    }
+  }
+}

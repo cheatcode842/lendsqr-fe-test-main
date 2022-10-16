@@ -1,0 +1,54 @@
+@use '../abstract' as *;
+
+.links {
+  @include dflex-column;
+  align-items: flex-start;
+
+  &__header--title {
+    text-transform: uppercase;
+    margin: 0.2em 2em;
+    font-weight: 500;
+    padding-left: 1.3125em;
+  }
+
+  &__body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    &--item {
+      @include dflex;
+      cursor: pointer;
+      padding-left: 1.3125em;
+      position: relative;
+      @include transition-all;
+
+      &::before {
+        content: '';
+        height: 100%;
+        width: 3px;
+        position: absolute;
+        left: 0;
+      }
+
+      &:hover {
+        background-color: lighten($color-primary, 45%);
+      }
+
+      &:hover::before {
+        background-color: $color-primary;
+      }
+
+      .text {
+        text-transform: capitalize;
+        margin: 0;
+      }
+    }
+  }
+
+  .icon {
+    aspect-ratio: 1;
+    margin: 0.5em;
+    width: 1rem;
+  }
+}

@@ -1,0 +1,95 @@
+/* colors */
+$color-primary: #39cdcc;
+$color-outline: #545f7d26;
+$white: #ffffff;
+$black: #000000;
+
+/* text colors */
+$text-primary: #545f7d;
+$text-secondary: #213f7d;
+
+// border outline
+$border-color: #213f7d2b;
+$border-color-2: rgba(33, 63, 125, 0.06);
+/* event colors */
+$pending: #e9b200;
+$blacklisted: #e4033b;
+$inactive: #545f7d;
+$active: #39cd62;
+
+// color variants
+$content-bg: #e5e5e5;
+
+/* sizes */
+$logo-height: 2.5rem;
+
+/* font sizes */
+$font-sizes: (
+  xs: (
+    font-size: 0.75rem,
+    line-height: 1,
+  ),
+  sm: (
+    font-size: 0.875rem,
+    line-height: 1.25,
+  ),
+  base: (
+    font-size: 16px,
+    line-height: 18.77px,
+  ),
+  lg: (
+    font-size: 12px,
+    line-height: 14.08px,
+  ),
+  xl: (
+    font-size: 1.25rem,
+    line-height: 1.75,
+  ),
+  2xl: (
+    font-size: 1.5rem,
+    line-height: 2,
+  ),
+  3xl: (
+    font-size: 1.875rem,
+    line-height: 2.25,
+  ),
+  4xl: (
+    font-size: 2.25rem,
+    line-height: 2.5,
+  ),
+  5xl: (
+    font-size: 3rem,
+    line-height: 1,
+  ),
+  6xl: (
+    font-size: 3.75rem,
+    line-height: 1,
+  ),
+  7xl: (
+    font-size: 4.5rem,
+    line-height: 1,
+  ),
+  8xl: (
+    font-size: 4.5rem,
+    line-height: 1,
+  ),
+  9xl: (
+    font-size: 8rem,
+    line-height: 1,
+  ),
+);
+
+$body: 2rem;
+$heading: 3.528rem;
+$input-body: 1.1rem;
+
+/* box-radius */
+$box-radius: 7px 13px 13px 13px;
+
+/* box-shadow */
+$box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+
+/* mobile-first approach */
+/* responsive breakpoints */
+$tablet-up: 40em;
+$desktop: 80em;

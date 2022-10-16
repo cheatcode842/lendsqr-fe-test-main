@@ -1,0 +1,6 @@
+@use '../abstract' as *;
+
+.stars {
+  @include dflex;
+  height: fit-content;
+}

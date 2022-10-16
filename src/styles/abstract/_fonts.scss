@@ -1,0 +1,12 @@
+@use './variables' as *;
+
+// google fonts
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+
+// generate utility classes
+@each $device, $font in $font-sizes {
+  .text-#{$device} {
+    font-size: map-get($font, 'font-size');
+    line-height: map-get($font, 'line-height');
+  }
+}

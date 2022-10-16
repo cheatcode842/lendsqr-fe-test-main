@@ -1,0 +1,21 @@
+# Add 'repo' label to any root file changes
+repo:
+  - '*'
+
+component:
+  - src/component/**/*.tsx
+  - src/component/**/*.ts
+
+style:
+  - src/styles/**/*.scss
+
+asset:
+  - public/*
+
+# Add 'test' label to any change to *.spec.js files within the source dir
+test:
+  - src/**/*.spec.tsx
+
+# Add 'source' label to any change to src files within the source dir EXCEPT for the docs sub-folder
+source:
+  - any: ['src/**/*', '!src/docs/*']

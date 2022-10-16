@@ -1,0 +1,53 @@
+@use '../abstract' as *;
+
+.user {
+  margin-inline: 4em;
+  .back-to-users {
+    // override page title style
+    text-decoration: none;
+
+    @include dflex;
+    align-items: center;
+
+    .title {
+      margin-left: 3rem;
+    }
+
+    .leftArrorContainer {
+      transform: translateX(1em);
+      @include transition-all;
+      transition-timing-function: ease-in;
+
+      &:hover {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .banner {
+    @include dflex;
+    justify-content: space-between;
+    margin: 2em 0;
+    background-color: transparent;
+
+    .cta {
+      display: flex;
+      gap: 2em;
+
+      .btn-cta {
+        background-color: transparent;
+        width: 10.625rem;
+        height: 2.5rem;
+        border: 1px solid $blacklisted;
+        border-radius: 0.5em;
+        color: $blacklisted;
+        font-weight: 500;
+      }
+
+      .btn-cta:last-child {
+        border: 1px solid $color-primary;
+        color: $color-primary;
+      }
+    }
+  }
+}

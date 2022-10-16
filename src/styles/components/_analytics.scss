@@ -1,0 +1,11 @@
+@use '../abstract' as *;
+
+.analytics {
+  display: grid;
+  grid-template-columns: 4em repeat(4, 1fr) 4em;
+  column-gap: 2em;
+
+  .card:first-child {
+    grid-column: 2 / 3;
+  }
+}

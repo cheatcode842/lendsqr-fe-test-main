@@ -1,0 +1,96 @@
+@use '../abstract' as *;
+
+.header {
+  @include dflex;
+  box-shadow: $box-shadow;
+  background-color: $white;
+  height: 6.25rem;
+  inset-inline: 0;
+  padding-inline: 2em;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  &__logo {
+    @include dflex;
+    min-width: 12rem;
+  }
+
+  &__search {
+    @include dflex;
+    align-items: stretch;
+    border: 1px solid $border-color;
+    border-radius: 0.3em;
+    margin-left: 4em;
+    height: 2.5rem;
+    min-width: min-content;
+    max-width: 25rem;
+    overflow: hidden;
+
+    @include tablet-up {
+      margin-left: 2em;
+    }
+
+    .btn--search {
+      background-color: $color-primary;
+      flex-grow: 0.2;
+      width: 2.5rem;
+
+      .search-icon {
+        fill: $white;
+      }
+    }
+
+    .btn--search,
+    &--search-box {
+      border: none;
+    }
+
+    /* input field */
+    &--search-box {
+      color: lighten($black, 50%);
+      background-color: transparent;
+      padding: 0 0.5em;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .header__user {
+    @include dflex;
+    margin-left: auto;
+    width: 15rem;
+
+    > *:not(:last-child) {
+      margin-right: 1em;
+    }
+
+    .user__imageContainer {
+      display: grid;
+      place-items: center;
+
+      &--img {
+        aspect-ratio: 1;
+        border-radius: 50%;
+        margin-inline: auto;
+        min-width: fit-content;
+      }
+    }
+
+    .user__management {
+      @include dflex(center);
+
+      .username {
+        max-width: 20ch;
+        overflow: hidden;
+        padding: 0.2em;
+      }
+    }
+  }
+
+  .icon {
+    cursor: pointer;
+  }
+}
